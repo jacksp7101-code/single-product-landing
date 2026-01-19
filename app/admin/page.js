@@ -1,26 +1,26 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
-export default function Admin() {
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/orders")
-      .then(res => res.json())
-      .then(data => setOrders(data));
-  }, []);
-
+export default function Home() {
   return (
-    <main style={{ padding: 40 }}>
-      <h1>📦 Orders Dashboard</h1>
+    <main style={{ fontFamily: "Arial, sans-serif" }}>
 
-      {orders.map(order => (
-        <div key={order.id} style={{ border: "1px solid #ccc", padding: 10, margin: 10 }}>
-          <p><b>Name:</b> {order.name}</p>
-          <p><b>Phone:</b> {order.phone}</p>
-        </div>
-      ))}
-    </main>
-  );
-}
+      {/* NAVBAR */}
+      <nav style={{
+        padding: "20px 40px",
+        display: "flex",
+        justifyContent: "space-between",
+        borderBottom: "1px solid #eee"
+      }}>
+        <h2>FitPro</h2>
+        <button style={{ padding: "10px 20px" }}>Buy Now</button>
+      </nav>
+
+      {/* HERO */}
+      <section style={{
+        display: "flex",
+        flexWrap: "wrap",
+        padding: "60px 40px",
+        alignItems: "center"
+      }}>
+        <div style={{ flex: 1 }}>
+          <h1 style={{ fontSize: "42px" }}>Smart Fitness Watch</h1>
+          <p style={{ fontSize: "18px", margin: "20px 0" }}>
+            Track your health, fitness, and sleep with our premium smart watch.
